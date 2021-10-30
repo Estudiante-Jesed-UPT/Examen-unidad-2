@@ -1,169 +1,166 @@
 <script>
 
-    var opcion = prompt("Ingrese la opcion ENTRADA o SALIDA")
-    switch (opcion) {
-            case "ENTRADA":
-                entradaEstacionamiento()
-            break;
-            case "SALIDA":
-                salidaEstacionamiento()
-            break; 
+var opcion = prompt("Ingrese la opcion ENTRADA o SALIDA")
+switch (opcion) {
+        case "ENTRADA":
+            entradaEstacionamiento()
+        break;
+        case "SALIDA":
+            salidaEstacionamiento()
+        break; 
+    }
+
+
+function entradaEstacionamiento(texto) {
+    var estacionamiento = "Carros en estacionamiento"
+        console.log(estacionamiento);
+
+
+    let entrada = "hola"
+
+        while (entrada == "hola"){
+            let matri = prompt("Ingrese su numero de matricula");
+            let mar = prompt("Ingrese la marca de su vehiculo"); 
+            let nuevoRegistro = [];
+
+                let registro = {
+                matricula : matri,
+                marca : mar
+                }
+    
+            if (nuevoRegistro != null ){
+                nuevoRegistro.push (registro);
+            }
+            
+            let seguir = confirm("Desea ingresar mas matriculas ")
+                if (!seguir){ 
+                    entrada = "fin"
         }
         
-    function entradaEstacionamiento(texto) {
-            let salir = "n"
-            let Matriculas = []; 
+        console.log(registro);
+    }
+         
+   
+
+    alert ("Desea buscar su auto por matricula"); 
     
-            while (salir == "n"){
-                matricula = prompt("Ingresa la matricula del auto")
-                if (matricula != null ){
-                    Matriculas.push(parseInt(matricula))
-                }
-                let seguir = confirm("Desea ingresar mas matriculas ")
-                if (!seguir){ 
-                    salir = "Y"
-                }
-                
-    
-            }
-            console.log(Matriculas)
-           
-    
-            let dejar = "a"
-            let Autos = [];
-            while (dejar == "a"){
-                Auto = prompt("Ingresa la marca del auto")
-                if (Auto != null){
-                    Autos.push(Auto)
-                }
-                let abandonar = confirm("Desea ingresar mas marcas de autos")
-                if (!abandonar){ 
-                    dejar = "B"
-                }
-    
-            }
-            console.log(Autos)
-            console.log ("El numero de autos en el estacionamiento es de " + Matriculas.length);
-    
-        alert ("Desea buscar su auto por matricula"); 
-        
-            var matricula = prompt("Introduce la matricula");
-                if (matricula == "") {
-    
-                alert("No has introducido ninguna matricula");
-    
-                } 
-                else {
-                    var i = 0;
-                    var encontrado = false;
-    
-                    while (i < Matriculas.length && !encontrado) {
-                        if (Matriculas[i] == matricula) {
-                            encontrado = true
-                     }
-                    i++;
-                }
-    
-                if (encontrado) {
-                    alert("La matricula " + matricula + " es un carro "+ [Autos]); 
-                } 
-                else {
-                    alert("La matricula " + matricula + " no esta en el array"); 
-    
-                }
-    
-            }
-    
-        alert ("Desea buscar su auto por marca"); 
-    
-            var marca = prompt("Introduce la marca");
-                if (marca == "") {
-    
-                    alert("No has introducido ninguna marca");
-                } 
-                else {
-    
+        var matri = prompt("Introduce la matricula");
+            if (matri == "") {
+
+            alert("No has introducido ninguna matricula");
+
+            } 
+            else {
                 var i = 0;
                 var encontrado = false;
-                while (i < Autos.length && !encontrado) {
-    
-                    if (Autos[i] == marca) {
-                        encontrado = true;
-                    }
-                    i++;
-                }
-    
-                if (encontrado) {
-                    alert("La marca es un auto " + Autos + " con la matricula "+ [Matriculas]); 
-                } else {
-    
-                    alert("La Marca " + Autos + " del carro no esta");
-    
-                }
-    
+
+                while (i < nuevoRegistro.length && !encontrado) {
+                    if (nuevoRegistro[i] == matri) {
+                        encontrado = true
+                 }
+                i++;
             }
-         
-           
-    }
-            
-    function salidaEstacionamiento(texto) {
-        let  horas = prompt("Ingrese el total de horas que estuvo dentro del estacionamiento");
+
+            if (encontrado) {
+                alert("La matricula " + matri + " es un carro "+ [mar]); 
+            } 
+            else {
+                alert("La matricula " + matri + " no esta en el array"); 
+
+            }
+
+        }
+
+    alert ("Desea buscar su auto por marca"); 
+
+        var marca = prompt("Introduce la marca");
+            if (marca == "") {
+
+                alert("No has introducido ninguna marca");
+            } 
+            else {
+
+            var i = 0;
+            var encontrado = false;
+            while (i < mar.length && !encontrado) {
+
+                if (mar[i] == marca) {
+                    encontrado = true;
+                }
+                i++;
+            }
+
+            if (encontrado) {
+                alert("La marca es un auto " + mar + " con la matricula "+ [matri]); 
+            } else {
+
+                alert("La Marca " + mar + " del carro no esta");
+
+            }
+
+        }
+     
+       
+
+}      
+function salidaEstacionamiento(texto) {
+    let  horas = prompt("Ingrese el total de horas que estuvo dentro del estacionamiento");
+    
+    if (horas <= 3 ) {
+        alert ("Su total es de $100");
         
-        if (horas <= 3 ) {
-            alert ("Su total es de $100");
-            
-                var pago = prompt("Ingrese su monto de pago");
-                    if (pago == 100) {
-                        console.log("VUELVA PRONTO")
-                    } 
-                    else {
-                        if (pago < 100) {
-                            console.log("Su monto es insuficiente")
-                        } 
-                        else {
-                            total = pago - 100;
-                            console.log("Su cambio es de $" + total + " VUELVA PRONTO")
-                        }
-                    }  
-        }
-        if (horas >= 4 && horas <= 5) {
-            alert ("Su total es de $200");
-                
-                var pago = prompt("Ingrese su monto de pago");
-                
-                    if (pago == 200) {
-                        console.log("VUELVA PRONTO")
-                    } 
-                    else {
-                        if (pago < 200) {
-                            console.log("Su monto es insuficiente")
-                        } 
-                        else {
-                            total = pago - 200;
-                            console.log("Su cambio es de $" + total + " VUELVA PRONTO")
-                        }
-                    
-                    }  
-        }
-        if (horas >= 6) {
-            alert ("Su total es de $500");
             var pago = prompt("Ingrese su monto de pago");
-                
-                    if (pago == 500) {
-                        console.log("VUELVA PRONTO")
+                if (pago == 100) {
+                    console.log("VUELVA PRONTO")
+                } 
+                else {
+                    if (pago < 100) {
+                        console.log("Su monto es insuficiente")
                     } 
                     else {
-                        if (pago < 500) {
-                            console.log("Su monto es insuficiente")
-                        } 
-                        else {
-                            total = pago - 500;
-                            console.log("Su cambio es de $" +  total + " VUELVA PRONTO")
-                        }
-                    
-                    }  
-        }
+                        total = pago - 100;
+                        console.log("Su cambio es de $" + total + " VUELVA PRONTO")
+                    }
+                }  
     }
+    if (horas >= 4 && horas <= 5) {
+        alert ("Su total es de $200");
+            
+            var pago = prompt("Ingrese su monto de pago");
+            
+                if (pago == 200) {
+                    console.log("VUELVA PRONTO")
+                } 
+                else {
+                    if (pago < 200) {
+                        console.log("Su monto es insuficiente")
+                    } 
+                    else {
+                        total = pago - 200;
+                        console.log("Su cambio es de $" + total + " VUELVA PRONTO")
+                    }
+                
+                }  
+    }
+    if (horas >= 6) {
+        alert ("Su total es de $500");
+        var pago = prompt("Ingrese su monto de pago");
+            
+                if (pago == 500) {
+                    console.log("VUELVA PRONTO")
+                } 
+                else {
+                    if (pago < 500) {
+                        console.log("Su monto es insuficiente")
+                    } 
+                    else {
+                        total = pago - 500;
+                        console.log("Su cambio es de $" +  total + " VUELVA PRONTO")
+                    }
+                
+                }  
+    }
+}
     
            
     
